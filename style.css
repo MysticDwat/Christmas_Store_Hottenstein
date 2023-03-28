@@ -1,0 +1,192 @@
+body {
+    padding-top: 8em;
+    height: 100%;
+}
+
+header, nav {
+    margin: 0;
+    display: grid;
+    place-items: center;
+    background: mediumseagreen;
+    z-index: 3;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+header #banner-title {
+    font-size: 24px;
+}
+
+header p {
+    font-size: 12px;
+}
+
+header img {
+    object-fit: none;
+    height: 4.8em;
+    width: 50em;
+}
+
+article :is(h1,h2,h3) {
+    color: forestgreen;
+}
+
+nav {
+    padding: 1em;
+}
+
+nav ul {
+    display: flex;
+    list-style-type: none;
+}
+
+nav ul li :is(a:link, a:visited) {
+    margin: 0.25em;
+    padding: 0.25em;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    border-width: 0.15em;
+    margin: 0.1em
+}
+
+nav ul li a:active {
+    background: mediumaquamarine;
+    border: 0.15em solid mediumseagreen;
+}
+
+#product-categories {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.card-container {
+    --number_of_columns: 3;
+    --number_of_rows: 1;
+    margin: 0 auto;
+    padding: 1em;
+    width: clamp(30em,66vw,62em);
+    display: grid;
+    grid-template-columns: repeat(var(--number_of_columns), 1fr);
+    grid-template-rows: repeat(var(--number_of_rows), 1fr);
+    column-gap: 1em;
+    row-gap: 1em;
+}
+
+.card {
+    background: floralwhite;
+    height: 25em;
+    width: clamp(10em,22vw,20em);
+    border-radius: 5px;
+    overflow: hidden;
+    transition: 0.2s;
+}
+
+.card h3 {
+    margin: 0 0.375em;
+}
+
+.card p {
+    font-size: 12px;
+    margin: 0 0.5em;
+}
+
+.card :is(.price,.discount) {
+    border-radius: 1em;
+    padding: 0 0.5em;
+    margin-top: 0.5em;
+    width: max-content;
+}
+
+.card .price {
+    background: mediumaquamarine;
+}
+
+.card .discount {
+    background: crimson;
+}
+
+.deals.card-container .card-hover {
+    transform: scale(1.25);
+    box-shadow: 0 0 1em 1em crimson;
+    z-index: 2;
+}
+
+.form-container {
+    font-family: 'Courier New', Courier, monospace;
+    position: relative;
+    width: max-content;
+    overflow: hidden;
+    border-radius: 5px;
+    padding: 0.5em;
+}
+
+.form-container img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+}
+
+.form-container :is(input,textarea){
+    background: rgba(60,179,113,0.5);
+    border-radius: 5px;
+    border: none; 
+}
+
+.form-container :is(input[type="submit"],input[type="reset"]) {
+    cursor: pointer;
+    background: rgba(60,179,113,1);
+    padding: 0.1em;
+}
+
+.form-container :is(input,textarea):focus {
+    background: rgba(60,179,113,1);
+}
+
+.form-container label {
+    display: inline-block;
+}
+
+.form-container label::first-letter {
+    font-size: 1.5rem;
+}
+
+#deals-table {
+    border: 1px solid black;
+}
+
+#deals-table :is(th,td) {
+    border: 1px dotted black;
+}
+
+#deals-table th {
+    background: forestgreen;
+    color: floralwhite;
+    font-weight: bold;
+}
+
+#deals-table tr:nth-of-type(even) {
+    background: floralwhite;
+}
+
+#deals-table tr:nth-of-type(odd) {
+    background: mediumseagreen;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: floralwhite;
+    z-index: 3;
+}
